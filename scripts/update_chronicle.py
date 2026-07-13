@@ -56,7 +56,9 @@ def build_section() -> str:
             continue
         day = str(e.get("created_at") or "")[:10]
         lines.append(f'> "{quote}"')
-        lines.append(f"> — **{e.get('agent_name', '?')}** ({e.get('persona_type', '?')}), {day}")
+        lines.append(
+            f"> — **{e.get('agent_name', '?')}** ({e.get('persona_type', '?')}), {day}"
+        )
         lines.append("")
     stamp = datetime.now(UTC).strftime("%Y-%m-%d %H:%M UTC")
     lines.append(
